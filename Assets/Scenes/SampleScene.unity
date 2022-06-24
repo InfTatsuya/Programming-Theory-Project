@@ -756,7 +756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64bb10d64f31f9a48a98559e3d1bf3f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthMax: 0
+  healthMax: 500
   impactEffect: {fileID: 0}
   deathEffect: {fileID: 0}
   speed: 40000
