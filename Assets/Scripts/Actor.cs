@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Actor : MonoBehaviour
+public abstract class Actor : MonoBehaviour /// INHERITANCE - parent class
 {
     [SerializeField] protected int healthMax;
-    protected int currentHealth;
+    [SerializeField] protected int currentHealth;
     [SerializeField] protected ParticleSystem impactEffect;
     [SerializeField] ParticleSystem deathEffect;
 
@@ -21,12 +21,17 @@ public abstract class Actor : MonoBehaviour
     [SerializeField] protected GameObject projectile;
     [SerializeField] protected ParticleSystem muzzleEffect;
 
-    abstract protected void Move();
+    abstract protected void Move(); // ABSTRACTION
 
-    abstract protected void RotateTower();
-    abstract protected void Fire();
+    abstract protected void RotateTower(); // ABSTRACTION
+    abstract protected void Fire(); // ABSTRACTION
 
-    public virtual void TakeDamage(int damageAmount)
+
+    protected void Awake()
+    {
+        currentHealth = healthMax;
+    }
+    public virtual void TakeDamage(int damageAmount) //// POLYMORPHISM (in Player.cs)
     {
         if (impactEffect != null)
         {

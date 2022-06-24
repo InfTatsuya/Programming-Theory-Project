@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class Enemy : Actor
+public class Enemy : Actor ////INHERITANCE - child class
 {
     [SerializeField] GameObject mesh;
     [SerializeField] Rigidbody rb;

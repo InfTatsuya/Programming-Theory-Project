@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Actor
+public class Player : Actor //INHERITANCE - child class
 {
     [SerializeField] GameObject meshTank;
 
@@ -18,6 +18,7 @@ public class Player : Actor
 
     private void Awake()
     {
+        base.Awake();
         canMove = true;
         rb = GetComponentInChildren<Rigidbody>(); 
     }
@@ -79,7 +80,7 @@ public class Player : Actor
         tower.transform.LookAt(worldPosition, Vector3.up);
     }
 
-    public override void TakeDamage(int damageAmount)
+    public override void TakeDamage(int damageAmount) //// POLYMORPHISM
     {
         if (!isInvicible)
         {

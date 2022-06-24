@@ -8,13 +8,13 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float projectSpeed = 3000.0f;
 
     [SerializeField] protected int damage;
-    public int Damage
+    public int Damage // ENCAPSULATION
     {
         get { return damage; }
     }
 
     [SerializeField] protected float range = 1000.0f;
-    public float Range
+    public float Range // ENCAPSULATION
     {
         get { return range; }
     }

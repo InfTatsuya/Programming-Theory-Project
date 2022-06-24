@@ -8,10 +8,12 @@ public class PickupItem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Actor obj = other.gameObject.GetComponent<Actor>();
+        Actor obj = other.gameObject.GetComponentInParent<Actor>();
+        Debug.Log(other.gameObject.name);
         if(obj != null)
         {
             obj.TakeDamage(amount);
+            Destroy(gameObject);
         }
     }
 
